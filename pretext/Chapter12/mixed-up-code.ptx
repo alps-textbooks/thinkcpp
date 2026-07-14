@@ -233,8 +233,6 @@
       </block>
       <block order="18">
         <cline>   int maxIndex = 0;</cline>
-      </block>
-      <block order="1">
         <cline>   int maxLikes = 0;</cline>
       </block>
       <block order="16">
@@ -249,8 +247,6 @@
       </block>
       <block order="11">
         <cline>         maxIndex = i;</cline>
-      </block>
-      <block order="5">
         <cline>         maxLikes = songs[i].numLikes;</cline>
       </block>
       <block order="17"

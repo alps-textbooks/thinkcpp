@@ -360,8 +360,6 @@
       </block>
       <block order="1">
         <cline>   string suffix = "orty";</cline>
-      </block>
-      <block order="4">
         <cline>   char letter = 'S';</cline>
       </block>
       <block order="12">

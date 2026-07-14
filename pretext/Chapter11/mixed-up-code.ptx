@@ -305,11 +305,7 @@ int main( ) {
       </block>
       <block order="4">
         <cline>id = id_in;</cline>
-      </block>
-      <block order="10">
         <cline>year = year_in;</cline>
-      </block>
-      <block order="11">
         <cline>name = name_in;</cline>
       </block>
       <block order="1"
