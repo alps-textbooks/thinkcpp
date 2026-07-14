@@ -248,18 +248,16 @@
         <cline>int main() {</cline>
       </block>
       <block order="4">
-        <cline>   string tongue_twister = "twelve twins twirled twelve twigs";</cline>
-      </block>
-      <block order="7">
         <choice correct="yes">
+          <cline>   string tongue_twister = "twelve twins twirled twelve twigs";</cline>
           <cline>   int count = 0;</cline>
+          <cline>   size_t i = 0;</cline>
         </choice>
         <choice>
+          <cline>   string tongue_twister = "twelve twins twirled twelve twigs";</cline>
           <cline>   int count = 1;  </cline>
+          <cline>   size_t i = 0;</cline>
         </choice>
-      </block>
-      <block order="8">
-        <cline>   size_t i = 0;</cline>
       </block>
       <block order="13">
         <cline><![CDATA[   while (i < tongue_twister.length()) {]]></cline>

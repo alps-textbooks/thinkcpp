@@ -159,31 +159,25 @@ int main() {
           <cline>string make = Jeep; </cline>
         </choice>
       </block>
-      <block order="4">
+      <block order="4" correct="no">
         <cline>make = "Jeep;" </cline>
       </block>
       <block order="6">
         <choice correct="yes">
           <cline>string model = "Cherokee";</cline>
+          <cline>int year = 2001;</cline>
         </choice>
         <choice>
           <cline>string model; </cline>
           <cline>model = Cherokee;</cline>
-        </choice>
-      </block>
-      <block order="3">
-        <cline>string model = Cherokee; </cline>
-      </block>
-      <block order="9">
-        <choice correct="yes">
-          <cline>int year = 2001;</cline>
-        </choice>
-        <choice>
           <cline>int year; </cline>
           <cline>2001 = year;</cline>
         </choice>
       </block>
-      <block order="5">
+      <block order="3" correct="no">
+        <cline>string model = Cherokee; </cline>
+      </block>
+      <block order="5" correct="no">
         <cline>int year; </cline>
         <cline>year = 2001</cline>
       </block>
