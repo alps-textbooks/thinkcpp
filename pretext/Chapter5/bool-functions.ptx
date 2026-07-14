@@ -83,12 +83,10 @@ else {
     <blocks>
       <block order="1">
         <cline>bool positiveFlag = (x &gt; 0);</cline>
+        <cline>bool evenFlag = (x % 2 == 0);</cline>
       </block>
       <block order="14" correct="no">
         <cline><![CDATA[bool positiveFlag = (x < 0); ]]></cline>
-      </block>
-      <block order="2">
-        <cline>bool evenFlag = (x % 2 == 0);</cline>
       </block>
       <block order="10" correct="no">
         <cline>bool evenFlag = (x % 2 == 1); </cline>

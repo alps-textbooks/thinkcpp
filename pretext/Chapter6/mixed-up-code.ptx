@@ -124,13 +124,11 @@
       </block>
       <block order="9">
         <cline>   int n = 1;</cline>
+        <cline>   int sum = 0;</cline>
       </block>
       <block order="10"
              correct="no">
         <cline>   int n = 10; </cline>
-      </block>
-      <block order="8">
-        <cline>   int sum = 0;</cline>
       </block>
       <block order="2"
              correct="no">
@@ -451,8 +449,6 @@
       </block>
       <block order="6">
         <cline>   int n = start;</cline>
-      </block>
-      <block order="4">
         <cline>   int sum = 0;</cline>
       </block>
       <block order="12"
@@ -509,16 +505,12 @@
       </block>
       <block order="10">
         <cline>   int reverse = 0;</cline>
+        <cline>   int temp = num;</cline>
+        <cline>   int remainder = 0;</cline>
       </block>
       <block order="13"
              correct="no">
         <cline>   int reverse = 0  </cline>
-      </block>
-      <block order="4">
-        <cline>   int temp = num;</cline>
-      </block>
-      <block order="7">
-        <cline>   int remainder = 0;</cline>
       </block>
       <block order="15"
              correct="no">

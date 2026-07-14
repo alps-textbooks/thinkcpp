@@ -137,8 +137,6 @@ int main() {
       </block>
       <block order="3">
         <cline> double avgX = (p1.x + p2.x + p3.x)/3;</cline>
-      </block>
-      <block order="2">
         <cline> double avgY = (p1.y + p2.y + p3.y)/3;</cline>
       </block>
       <block order="1" correct="no">

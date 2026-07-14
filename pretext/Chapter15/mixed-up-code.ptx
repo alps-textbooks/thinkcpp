@@ -199,8 +199,6 @@
       </block>
       <block order="12">
         <cline>   min = value;</cline>
-      </block>
-      <block order="16">
         <cline>   max = value;</cline>
       </block>
       <block order="3">

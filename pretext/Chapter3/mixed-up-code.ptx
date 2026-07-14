@@ -338,16 +338,10 @@
       <block order="8">
         <choice correct="yes">
           <cline> int dollarTotal = dollars + cents / 100;</cline>
-        </choice>
-        <choice>
-          <cline> double dollarTotal = dollars + cents / 100.0; </cline>
-        </choice>
-      </block>
-      <block order="2">
-        <choice correct="yes">
           <cline> double centTotal = cents % 100;</cline>
         </choice>
         <choice>
+          <cline> double dollarTotal = dollars + cents / 100.0; </cline>
           <cline> double centTotal = cents / 100; </cline>
         </choice>
       </block>
