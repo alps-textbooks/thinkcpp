@@ -94,7 +94,7 @@ cout &lt;&lt; minute * 100 / 60 &lt;&lt; endl;</program>
     <evaluation>
       <evaluate>
         <test correct="yes">
-          <strcmp case="insensitive"/>
+          <strcmp use-answer="yes" case="insensitive"/>
         </test>
       </evaluate>
     </evaluation>

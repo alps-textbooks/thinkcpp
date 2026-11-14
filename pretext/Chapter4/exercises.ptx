@@ -98,7 +98,7 @@ hi!
       <choice>
         <statement>
           <program>
-hi!
+hello!
 </program>
         </statement>
         <feedback><p>

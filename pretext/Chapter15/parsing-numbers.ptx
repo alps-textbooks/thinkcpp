@@ -23,7 +23,7 @@ int convertToInt(const string&amp; s)
       digitString += s[i];
     }
   }
-  return atoi(digitString);
+  return atoi(digitString.c_str());
 }</program>
   <p>The variable <c>digitString</c> is an example of an <term>accumulator</term>. It is similar to the counter
     we saw in <xref ref="chapter7_looping-and-counting-loopcount"/>, except that
@@ -56,7 +56,7 @@ int convertToInt(const string& s) {
          digitString += s[i];
       }
    }
-   return atoi(digitString);
+   return atoi(digitString.c_str());
 }
 
 int main() {

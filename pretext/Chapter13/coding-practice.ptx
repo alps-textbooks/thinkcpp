@@ -256,8 +256,23 @@ void swapValues (vector&lt;int&gt; &amp;vec, int index1, int index2) {
 #include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;cstdlib&gt;
+#include &lt;ctime&gt;
 #include &lt;numeric&gt;
 using namespace std;
+
+// randomInt and swapValues from the previous exercises.
+int randomInt(int low, int high) {
+    srand(time(NULL));
+    int x = random();
+    int y = x % (high - low + 1) + low;
+    return y;
+}
+
+void swapValues(vector&lt;int&gt; &amp;vec, int index1, int index2) {
+    int temp = vec[index1];
+    vec[index1] = vec[index2];
+    vec[index2] = temp;
+}
 
 // Write your code for the generateRandVec function here.
         </code>

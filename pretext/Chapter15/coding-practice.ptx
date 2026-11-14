@@ -3,7 +3,7 @@
   <exercise label="cp_15_1">
     <statement>
       <p>Write a program that takes in an input file called <c>poem.txt</c> <fn>
-          <datafile label="poem.txt" filename="poem.txt" cols="10" rows="5">
+          <datafile label="poem-txt" xml:id="poem-txt" filename="poem.txt" cols="10" rows="5">
             <pre>Two roads diverged in a yellow wood,
 And sorry I could not travel both
 And be one traveler, long I stood
@@ -27,7 +27,7 @@ And that has made all the difference.</pre>
           </datafile>
         </fn> and prints the first 5 lines to the
   terminal. Include proper file error checking.</p>
-    <program interactive="activecode" label="cp_15_AC_1q">
+    <program interactive="activecode" label="cp_15_AC_1q" add-files="poem-txt">
         <code>
 #include &lt;iostream&gt;
 #include &lt;fstream&gt;
@@ -153,7 +153,7 @@ using namespace std;
   <exercise label="cp_15_3">
     <statement>
       <p>Write a program that takes in an input file called <c>heights.txt</c><fn>
-          <datafile label="heights.txt" filename="heights.txt">
+          <datafile label="heights-txt" xml:id="heights-txt" filename="heights.txt">
             <pre>62  67      75      68      65
 67  70      72      74      66
 72  66      66      73      69
@@ -162,7 +162,7 @@ using namespace std;
         </fn>, finds the median of the data, and prints
   “The median height is: <c>height</c> inches” to the terminal. Include proper file error
   checking.</p>
-    <program interactive="activecode" label="cp_15_AC_3q">
+    <program interactive="activecode" label="cp_15_AC_3q" add-files="heights-txt">
         <code>
 #include &lt;iostream&gt;
 #include &lt;fstream&gt;
@@ -326,12 +326,12 @@ int main() {
   alphabet, using ROT13 on the letter “n” would turn it into “a”. Thus,
   ROT13 can be used to encrypt and decrypt messages. Write a program that takes in an input file
   called <c>message.txt</c><fn>
-          <datafile label="message.txt" filename="message.txt">
+          <datafile label="message-txt" xml:id="message-txt" filename="message.txt">
             <pre>Pbatenghyngvbaf! Lbh'ir qrpelcgrq guvf zrffntr.</pre>
           </datafile>
         </fn>applies ROT13, and outputs the result to
   the terminal. Include proper file error checking.</p>
-    <program interactive="activecode" label="cp_15_AC_5q">
+    <program interactive="activecode" label="cp_15_AC_5q" add-files="message-txt">
         <code>
 #include &lt;iostream&gt;
 #include &lt;fstream&gt;
@@ -396,7 +396,7 @@ int main() {
   <exercise label="cp_15_7">
     <statement>
       <p>Write a program that reads in data about a class from the file <c>class_data.txt</c><fn>
-          <datafile label="class_data.txt" filename="class_data.txt">
+          <datafile label="class_data-txt" xml:id="class_data-txt" filename="class_data.txt">
             <p>Below are the contents of the input file.</p>
             <pre>First    Last       Grade    GPA    Age
 Alex     Jones      9        3.4    14
@@ -408,7 +408,7 @@ Faith    Flemmings  10       3.0    15
 Gina     Zhou       9        3.2    14</pre>
           </datafile></fn> and outputs the rows
   of data where a student has a GPA of at least 3.5. Include proper file error checking.</p>
-    <program interactive="activecode" label="cp_15_AC_7q">
+    <program interactive="activecode" label="cp_15_AC_7q" add-files="class_data-txt">
         <code>
 #include &lt;iostream&gt;
 #include &lt;fstream&gt;
@@ -458,7 +458,7 @@ int main() {
   Include proper file error checking.
         Check the hint below for help with the construction of the code.</p>
 
-    <program interactive="activecode" label="cp_15_AC_8q_editor">
+    <program interactive="activecode" label="cp_15_AC_8q_editor" add-files="shrimp-txt">
         <code>
 #include &lt;iostream&gt;
 #include &lt;fstream&gt;
@@ -476,7 +476,7 @@ using namespace std;
             Include proper file error checking.
             Use the lines to construct the code, then go back to complete the Activecode.</p>
 
-          <datafile label="shrimp.txt" filename="shrimp.txt">
+          <datafile label="shrimp-txt" xml:id="shrimp-txt" filename="shrimp.txt">
             <pre>There's pineapple shrimp, lemon shrimp, coconut shrimp,
 pepper shrimp, shrimp soup, shrimp stew, shrimp salad,
 shrimp and potatoes, shrimp burger, shrimp sandwich.
@@ -584,15 +584,15 @@ int main() {
         mat.push_back(rows);
     }
     for (int i = 0; i &lt; 10; ++i) {
-        for (int j = 0; i &lt; 10; ++j) {
-            matrix[i][j] = (i + 1) * (j + 1);
+        for (int j = 0; j &lt; 10; ++j) {
+            mat[i][j] = (i + 1) * (j + 1);
         }
     }
     for (int i = 0; i &lt; 10; ++i) {
-        for (int j = 0; i &lt; 10; ++j) {
-            outfile &lt;&lt; matrix[i][j] &lt;&lt; '\t';
+        for (int j = 0; j &lt; 10; ++j) {
+            outfile &lt;&lt; mat[i][j] &lt;&lt; '\t';
         }
-        cout &lt;&lt; endl;
+        outfile &lt;&lt; endl;
     }
 }
         </code>

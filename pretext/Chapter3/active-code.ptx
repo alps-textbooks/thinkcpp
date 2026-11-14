@@ -428,7 +428,7 @@ int main() {
 
   <exercise label="functions_a9">
     <statement>
-      <p>Write a function called <c>tanD</c> that prints the tangent of an angle given as a <c>double</c> in
+      <p>Write a function called <c>tanDegrees</c> that prints the tangent of an angle given as a <c>double</c> in
         degrees. Use 3.14 for pi. Be sure to include any necessary headers.</p>
     <program interactive="activecode" line-numbers="yes" label="functions_a9q_editor">
       <code><![CDATA[
