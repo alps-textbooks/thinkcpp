@@ -789,7 +789,6 @@ public:
     void print();
     void push_front(int value);
     void pop_front();
-    // Declare your max and min functions here.
 };
 
 // Write your max function here.
