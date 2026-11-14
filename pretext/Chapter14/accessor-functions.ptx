@@ -192,8 +192,11 @@ double Complex::getImag() {
     </hint>
     <hint>
       <title>getMag</title>
+      <activity label="question14_4_2" number="yes" adaptive="yes" indentation="hide">
+        <statement>
           <p>Let's write the code for the <c>getMag</c> function, which should return the magnitude of a <c>Complex</c>
             object.</p>
+        </statement>
         <blocks>
           <block order="3">
             <choice correct="yes">
@@ -215,6 +218,7 @@ double Complex::getImag() {
             <cline>}</cline>
           </block>
         </blocks>
+      </activity>
     </hint>
     <hint>
       <title>getTheta</title>
