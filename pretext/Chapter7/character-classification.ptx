@@ -146,7 +146,7 @@ int main() {
               <cline>       if (isalpha(input[i]) &amp;&amp; isupper(input[i])) {</cline>
             </choice>
             <choice>
-              <cline>       if (isalpha(input[i]) || isupper(input[i])) {        </cline>
+              <cline>       if (isalpha(input[i]) &amp;&amp; islower(input[i])) {        </cline>
             </choice>
           </block>
           <block order="10">
