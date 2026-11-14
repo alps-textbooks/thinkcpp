@@ -100,15 +100,28 @@ int main() {
       <p>Construct a block of code that correctly creates variables of a certain structure's type.</p>
     </statement>
     <blocks>
-      <block order="1"
-             correct="no">
+      <block order="5">
         <cline>struct Point {</cline>
+      </block>
+      <block order="2">
         <cline>   double x, y;</cline>
+      </block>
+      <block order="7">
         <cline>};</cline>
+      </block>
+      <block order="3">
         <cline>int main() {</cline>
+      </block>
+      <block order="8">
         <cline>   Point blue;</cline>
+      </block>
+      <block order="1">
         <cline>   blue.x = 3.0;</cline>
-        <cline>   Point.x = 3.0; </cline>
+      </block>
+      <block order="4" correct="no">
+        <cline>   Point.x = 3.0;</cline>
+      </block>
+      <block order="6">
         <cline>}</cline>
       </block>
     </blocks>
