@@ -23,6 +23,10 @@ int main () {
     nums[3] = 2;
 }
         </code>
+<tests>
+
+
+</tests>
 
     </program></statement>
     <solution>
@@ -43,6 +47,10 @@ int main () {
     nums[2] = 2;
 }
         </code>
+<tests>
+
+
+</tests>
 
     </program>
     </solution>
@@ -146,6 +154,10 @@ int endsWith(const vector&lt;string&gt;&amp; vec, char c) {
     return count;
 }
         </code>
+<tests>
+
+
+</tests>
 
     </program></statement>
     <solution>
@@ -173,6 +185,10 @@ int endsWith(const vector&lt;string&gt;&amp; vec, char c) {
     return count;
 }
         </code>
+<tests>
+
+
+</tests>
 
     </program>
     </solution>
@@ -276,6 +292,10 @@ int main () {
 
 }
         </code>
+<tests>
+
+
+</tests>
 
     </program></statement>
     <solution>
@@ -298,6 +318,10 @@ int main () {
     }
 }
         </code>
+<tests>
+
+
+</tests>
 
     </program>
     </solution>
@@ -377,6 +401,10 @@ int main() {
 #include &lt;vector&gt;
 using namespace std;
         </code>
+<tests>
+
+
+</tests>
 
     </program></statement>
     <solution>
@@ -407,6 +435,10 @@ int has_char(const vector&lt;string&gt;&amp; vec, char let) {
     return false;
 }
         </code>
+<tests>
+
+
+</tests>
 
     </program>
     </solution>
@@ -495,6 +527,10 @@ int main() {
 #include &lt;vector&gt;
 using namespace std;
         </code>
+<tests>
+
+
+</tests>
 
     </program></statement>
     <solution>
@@ -516,6 +552,10 @@ double mean (const vector&lt;double&gt; nums) {
     return sum/nums.size();
 }
         </code>
+<tests>
+
+
+</tests>
 
     </program>
     </solution>
@@ -603,6 +643,10 @@ int main() {
 #include &lt;vector&gt;
 using namespace std;
         </code>
+<tests>
+
+
+</tests>
 
     </program></statement>
     <solution>
@@ -627,6 +671,10 @@ void make_odd ( vector&lt;int&gt; &amp;nums) {
     }
 }
         </code>
+<tests>
+
+
+</tests>
 
     </program>
     </solution>
