@@ -70,9 +70,9 @@
         <choice>
           <cline>void printMovie (&amp;Movie m const) {  </cline>
         </choice>
-      </block>
-      <block order="5">
-        <cline>Movie printMovie (Movie m) {  </cline>
+        <choice>
+          <cline>Movie printMovie (Movie m) {  </cline>
+        </choice>
       </block>
       <block order="1">
         <cline><![CDATA[   cout << "\"" << m.title << "\" directed by ";]]></cline>
@@ -209,9 +209,9 @@
         <choice>
           <cline>void printDate (&amp;Date d) {  </cline>
         </choice>
-      </block>
-      <block order="2">
-        <cline>Date printDate (Date d) {  </cline>
+        <choice>
+          <cline>Date printDate (Date d) {  </cline>
+        </choice>
       </block>
       <block order="4">
         <cline><![CDATA[   cout << d.month << "/" << d.day << "/" << d.year << endl;]]></cline>
@@ -248,9 +248,9 @@
         <choice>
           <cline>void nextMonth(const Date d) {  </cline>
         </choice>
-      </block>
-      <block order="6">
-        <cline>Date nextMonth (Date&amp; d) {  </cline>
+        <choice>
+          <cline>Date nextMonth (Date&amp; d) {  </cline>
+        </choice>
       </block>
       <block order="11">
         <cline>   if (d.month == 12) {</cline>
@@ -269,7 +269,8 @@
       <block order="3">
         <cline>      d.year++;</cline>
       </block>
-      <block order="10">
+      <block order="10"
+             correct="no">
         <cline>      d.year = 1;</cline>
       </block>
       <block order="9">
@@ -362,9 +363,9 @@
         <choice>
           <cline>void printLength(length l) {  </cline>
         </choice>
-      </block>
-      <block order="6">
-        <cline>string printLength(Length l) {  </cline>
+        <choice>
+          <cline>string printLength(Length l) {  </cline>
+        </choice>
       </block>
       <block order="7">
         <cline><![CDATA[   cout << l.yards << " yds, " << l.feet << " feet, " << l.inches << " in" endl;]]></cline>
@@ -401,9 +402,9 @@
         <choice>
           <cline>void allInches(const length l) {  </cline>
         </choice>
-      </block>
-      <block order="1">
-        <cline>Length allInches(Length l const) {  </cline>
+        <choice>
+          <cline>Length allInches(Length l const) {  </cline>
+        </choice>
       </block>
       <block order="4">
         <cline>   l.inches += 36 * l.yards + 12 * l.feet;</cline>
@@ -446,9 +447,7 @@
         <choice>
           <cline>void addLengths (Length&amp; first, Length&amp; second, const Length&amp; total) {  </cline>
         </choice>
-      </block>
-      <block order="15">
-        <choice correct="yes">
+        <choice>
           <cline>void addLengths(Length first, Length second, Length total) {  </cline>
         </choice>
         <choice>
@@ -468,7 +467,7 @@
         <cline>   if (total.inches &gt;= 12) {</cline>
       </block>
       <block order="6">
-        <cline>      int addFeet = total.inches % 12;</cline>
+        <cline>      int addFeet = total.inches / 12;</cline>
       </block>
       <block order="11">
         <cline>      total.feet += addFeet;</cline>
@@ -477,13 +476,13 @@
         <cline>      total.inches = total.inches - addFeet * 12;</cline>
       </block>
       <block order="9">
-        <cline> }</cline>
+        <cline>   }</cline>
       </block>
       <block order="13">
         <cline>   if (total.feet &gt;= 3) {</cline>
       </block>
       <block order="4">
-        <cline>      int addYards = total.feet % 3;</cline>
+        <cline>      int addYards = total.feet / 3;</cline>
       </block>
       <block order="14">
         <cline>      total.yards += addYards;</cline>
@@ -492,7 +491,7 @@
         <cline>      total.feet = total.feet - addYards * 3;</cline>
       </block>
       <block order="17">
-        <cline> }</cline>
+        <cline>   }</cline>
         <cline>}</cline>
       </block>
     </blocks>
