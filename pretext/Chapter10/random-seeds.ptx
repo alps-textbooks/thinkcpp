@@ -31,7 +31,7 @@
 using namespace std;
 
 int main() {
-    srand(gettimeofday(NULL));
+    srand(time(NULL));
 
     for (int i = 0; i &lt; 4; i++) {
         int x = random();
@@ -72,10 +72,10 @@ int main() {
       </choice>
       <choice correct="yes">
         <statement>
-          <p>Running the <c>gettimeofday()</c> function, and calling srand() on the result.</p>
+          <p>Running the <c>time()</c> function, and calling srand() on the result.</p>
         </statement>
         <feedback><p>
-          <c>gettimeofday()</c> will generate something reasonably random, which you can then use as a random
+          <c>time()</c> will generate something reasonably random, which you can then use as a random
             seed.
         </p></feedback>
       </choice>

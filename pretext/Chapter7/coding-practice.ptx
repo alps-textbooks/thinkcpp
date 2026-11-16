@@ -184,7 +184,7 @@ using namespace std;
 
 void censorWord(string input, string word) {
     size_t length = word.length();
-    while (input.find(word) != string::npos) {{
+    while (input.find(word) != string::npos) {
         int index = input.find(word);
         size_t i = 0;
         while (i < length) {
@@ -577,6 +577,7 @@ using namespace std;
 string longestWord(string input) {
     size_t n = 0;
     size_t maxLength = 0;
+    string longest = "";
     while (n < input.length()) {
         size_t wordLength = 0;
         while (input[n] != ' ' && n < input.length()) {

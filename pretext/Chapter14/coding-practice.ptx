@@ -636,6 +636,8 @@ public:
     void pop_back();
     int at(int index);
     void print();
+    void push_front(int value);
+    void pop_front();
 };
 
 // Write your implementation of push_front here.
@@ -648,7 +650,7 @@ int main() {
     myVec.pop_front();
     myVec.push_front(5);
     myVec.push_front(10);
-    cout &lt;&lt; &quot;The new size is &quot; &lt;&lt; myVec.size(); &lt;&lt; endl;
+    cout &lt;&lt; &quot;The new size is &quot; &lt;&lt; myVec.size() &lt;&lt; endl;
     myVec.print();
 }
         </code>
@@ -699,6 +701,8 @@ public:
     void pop_back();
     int at(int index);
     void print();
+    void push_front(int value);
+    void pop_front();
 };
 
 void MyVector::push_front(int value) {

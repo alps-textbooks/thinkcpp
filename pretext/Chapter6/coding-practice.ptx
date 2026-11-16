@@ -343,17 +343,13 @@ Buzz
 </output>
       </console>
     <program interactive="activecode" label="cp_6_AC_5_editor"><code><![CDATA[
-           #include <iostream>
-           using namespace std;
+#include <iostream>
+using namespace std;
 
-           void printPyramid (int n) {
-               // Write your implementation here.
-           }
-
-           int main() {
-               printPyramid (5);
-           }
-               ]]></code></program></statement>
+int main() {
+    // Write your implementation here.
+}
+           ]]></code></program></statement>
     <solution>
       <p>Below is one way to implement the <q>FizzBuzz</q> program. We use conditionals with modulus
         operators in a while loop to categorize every number and print the correct output. Feel free
@@ -532,7 +528,7 @@ bool isPrime(int num) {
         return false;
     }
     int n = 2;
-    while (n < num / 2) {
+    while (n <= num / 2) {
         if (num % n == 0) {
             return false;
         }
@@ -629,25 +625,12 @@ using namespace std;
 int main() {
     // Write your implementation here.
 }
-           ]]></code>
-            <tests><![CDATA[
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "doctest.h"
- 
-TEST_CASE("isPrime function") {
-    CHECK(isPrime (0) == 0);
-    CHECK(isPrime (1) == 0);
-    CHECK(isPrime (13) == 1);
-    CHECK(isPrime (24) == 0);
-}
-]]></tests></program></statement>
+           ]]></code></program></statement>
     <solution>
-      <p>Below is one way to implement the program. First, we check to see if <c>num</c> is less than
-        or equal to 1, and return <c>false</c> if that is the case. Next, we use a <c>while</c> loop to
-        continuously check if a factor <c>n</c> divides <c>num</c> evenly. If it does, we return <c>false</c>.
-        If no value of <c>n</c> divides <c>num</c> evenly, then we return <c>true</c>. Notice the <c>while</c>
-        loop only goes up to <c>num / 2</c> because if 2 doesn't divide evenly, then there isn't a smaller
-        factor.</p>
+      <p>Below is one way to implement the program. First, we print the first two numbers, 0 and 1.
+        Next, we use a <c>while</c> loop to compute each following number as the sum of the two
+        previous numbers, print it, and move <c>first</c> and <c>second</c> forward. The counter <c>n</c>
+        stops the loop once 20 numbers have been printed.</p>
       <program xml:id="cp_6_AC_9a"
                line-numbers="yes"><code><![CDATA[
 #include <iostream>

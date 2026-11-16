@@ -9,7 +9,7 @@
       <p>Fix the code below so that it runs without errors. Hint: you might need to change the
         names
         of some variables.</p>
-    <program interactive="activecode" line-numbers="yes" language="python" label="VARS_a1q_editor">
+    <program interactive="activecode" line-numbers="yes" language="cpp" label="VARS_a1q_editor">
       <code><![CDATA[
 #include <iostream>
 using namespace std;
@@ -34,7 +34,7 @@ int main() {
                char t = 'T';
                char f = 'F';
                cout << t << " is short for true. ";
-               cout << f << " is short for false." << endl; cout << f << " is short for false." << endl;
+               cout << f << " is short for false." << endl;
            }
                    ]]></code>
            </program>
@@ -168,7 +168,7 @@ int main() {
 
     // DO NOT MODIFY ANYTHING BELOW THIS LINE.
     cout << "Your solution had volume = " << volume << endl;
-    cout << "The correct solution has volume = 104.667";
+    cout << "The correct solution has volume = 523.333";
 }
     ]]></code>
     </program></statement>

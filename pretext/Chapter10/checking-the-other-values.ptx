@@ -112,8 +112,8 @@ for (int i = 0; i &lt; upperBound; i++) {
             decreases</p>
         </statement>
         <feedback><p>
-          Incorrect! As we continue to increase the size of numValues, the percent by which the
-            number of appearances differes from the expected value approaches 0.
+          Correct! As we continue to increase the size of numValues, the percent by which the
+            number of appearances differs from the expected value approaches 0.
         </p></feedback>
       </choice>
     </choices>

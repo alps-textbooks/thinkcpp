@@ -22,7 +22,7 @@ using namespace std;
 int main() {
     string fruit = "apple";
     size_t index = 0;
-    while (index < fruit.lenght()) {
+    while (index < fruit.length()) {
         char letter = fruit[index];
         cout << letter << endl;
         index = index + 1;

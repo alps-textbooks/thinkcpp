@@ -91,12 +91,12 @@ int main() {
           </block>
           <block order="4">
             <cline>        if (c.has_icing) {</cline>
-            <cline>            cout &lt;&lt; &quot;This is a &quot; &lt;&lt; c.color &lt;&lt; &quot;,&quot; &lt;&lt; c.diameter &lt;&lt; &quot; inch diameter cake with icing.&quot; &lt;&lt; endl;</cline>
+            <cline>            cout &lt;&lt; &quot;This is a &quot; &lt;&lt; c.color &lt;&lt; &quot;, &quot; &lt;&lt; c.diameter &lt;&lt; &quot; inch diameter cake with icing.&quot; &lt;&lt; endl;</cline>
             <cline>        }</cline>
           </block>
           <block order="9">
             <cline>        else {</cline>
-            <cline>            cout &lt;&lt; &quot;This is a &quot; &lt;&lt; c.color &lt;&lt; &quot;,&quot; &lt;&lt; c.diameter &lt;&lt; &quot; inch diameter cake without icing.&quot; &lt;&lt; endl;</cline>
+            <cline>            cout &lt;&lt; &quot;This is a &quot; &lt;&lt; c.color &lt;&lt; &quot;, &quot; &lt;&lt; c.diameter &lt;&lt; &quot; inch diameter cake without icing.&quot; &lt;&lt; endl;</cline>
             <cline>        }</cline>
           </block>
           <block order="3">
@@ -153,10 +153,10 @@ int main() {
 void printCakeInfo(Cake c) {
     if (c.name == &quot;n/a&quot;) {
         if (c.has_icing) {
-            cout &lt;&lt; &quot;This is a &quot; &lt;&lt; c.color &lt;&lt; &quot;,&quot; &lt;&lt; c.diameter &lt;&lt; &quot; inch diameter cake with icing.&quot; &lt;&lt; endl;
+            cout &lt;&lt; &quot;This is a &quot; &lt;&lt; c.color &lt;&lt; &quot;, &quot; &lt;&lt; c.diameter &lt;&lt; &quot; inch diameter cake with icing.&quot; &lt;&lt; endl;
         }
         else {
-            cout &lt;&lt; &quot;This is a &quot; &lt;&lt; c.color &lt;&lt; &quot;,&quot; &lt;&lt; c.diameter &lt;&lt; &quot; inch diameter cake without icing.&quot; &lt;&lt; endl;
+            cout &lt;&lt; &quot;This is a &quot; &lt;&lt; c.color &lt;&lt; &quot;, &quot; &lt;&lt; c.diameter &lt;&lt; &quot; inch diameter cake without icing.&quot; &lt;&lt; endl;
         }
     }
     else {
@@ -255,10 +255,10 @@ int main() {
 void printCakeInfo(Cake c) {
     if (c.name == &quot;n/a&quot;) {
         if (c.has_icing) {
-            cout &lt;&lt; &quot;This is a &quot; &lt;&lt; c.color &lt;&lt; &quot;,&quot; &lt;&lt; c.diameter &lt;&lt; &quot; inch diameter cake with icing.&quot; &lt;&lt; endl;
+            cout &lt;&lt; &quot;This is a &quot; &lt;&lt; c.color &lt;&lt; &quot;, &quot; &lt;&lt; c.diameter &lt;&lt; &quot; inch diameter cake with icing.&quot; &lt;&lt; endl;
         }
         else {
-            cout &lt;&lt; &quot;This is a &quot; &lt;&lt; c.color &lt;&lt; &quot;,&quot; &lt;&lt; c.diameter &lt;&lt; &quot; inch diameter cake without icing.&quot; &lt;&lt; endl;
+            cout &lt;&lt; &quot;This is a &quot; &lt;&lt; c.color &lt;&lt; &quot;, &quot; &lt;&lt; c.diameter &lt;&lt; &quot; inch diameter cake without icing.&quot; &lt;&lt; endl;
         }
     }
     else {
@@ -368,10 +368,10 @@ int main() {
  void printCakeInfo(Cake c) {
      if (c.name == &quot;n/a&quot;) {
          if (c.has_icing) {
-             cout &lt;&lt; &quot;This is a &quot; &lt;&lt; c.color &lt;&lt; &quot;,&quot; &lt;&lt; c.diameter &lt;&lt; &quot; inch diameter cake with icing.&quot; &lt;&lt; endl;
+             cout &lt;&lt; &quot;This is a &quot; &lt;&lt; c.color &lt;&lt; &quot;, &quot; &lt;&lt; c.diameter &lt;&lt; &quot; inch diameter cake with icing.&quot; &lt;&lt; endl;
          }
          else {
-             cout &lt;&lt; &quot;This is a &quot; &lt;&lt; c.color &lt;&lt; &quot;,&quot; &lt;&lt; c.diameter &lt;&lt; &quot; inch diameter cake without icing.&quot; &lt;&lt; endl;
+             cout &lt;&lt; &quot;This is a &quot; &lt;&lt; c.color &lt;&lt; &quot;, &quot; &lt;&lt; c.diameter &lt;&lt; &quot; inch diameter cake without icing.&quot; &lt;&lt; endl;
          }
      }
      else {
@@ -609,7 +609,7 @@ struct Outfit {
     Shirt s;
     Pants p;
     bool has_hat;
-}
+};
 
 // Write your code for the printOutfit function here.
 
@@ -621,8 +621,8 @@ int main() {
 }
         </code>
     </program></statement>
-    <solution><p>Below is one way to implement the program. We declare the <c>Cake</c> struct and list
-      the instance variables in order.</p><program xml:id="cp_9_AC_9a">
+    <solution><p>Below is one way to implement the program. We print the shirt's and the pants'
+      details, then whether the outfit has a hat.</p><program xml:id="cp_9_AC_9a">
         <code>
 #include &lt;iostream&gt;
 using namespace std;
@@ -641,11 +641,10 @@ struct Outfit {
     Shirt s;
     Pants p;
     bool has_hat;
-}
+};
 
 void printOutfit(Outfit o) {
-&quot;Shirt: blue and L; Pants: S and denim; has hat&quot;
-    cout &lt;&lt; &quot;Shirt: &quot; &lt;&lt; o.s.color &lt;&lt; &quot; and &quot; &lt;&lt; o.s.size &lt;&lt; &quot;; Pants:&quot; &lt;&lt; o.p.size &lt;&lt; &quot; and &quot; &lt;&lt; o.p.material &lt;&lt; &quot;; &quot;;
+    cout &lt;&lt; &quot;Shirt: &quot; &lt;&lt; o.s.color &lt;&lt; &quot; and &quot; &lt;&lt; o.s.size &lt;&lt; &quot;; Pants: &quot; &lt;&lt; o.p.size &lt;&lt; &quot; and &quot; &lt;&lt; o.p.material &lt;&lt; &quot;; &quot;;
     if (o.has_hat) {
         cout &lt;&lt; &quot;has hat&quot; &lt;&lt; endl;
     }
@@ -675,8 +674,6 @@ int main() {
 #include &lt;iostream&gt;
 using namespace std;
 
-void printOutfit(Outfit o);
-
 struct Shirt {
     string color;
     char size;
@@ -692,6 +689,8 @@ struct Outfit {
     Pants p;
     bool has_hat;
 };
+
+void printOutfit(Outfit o);
 
 // Write your code for the changeShirts function here.
 
@@ -743,7 +742,7 @@ void printOutfit(Outfit o) {
           </block>
           <block order="1">
             <cline>// changePants function</cline>
-            <cline>void changePants(Outfit &amp;outfit, Pants p) {</cline>
+            <cline>void changePants(Outfit &amp;outfit, Pants pants) {</cline>
           </block>
           <block order="4">
             <cline>    outfit.p = pants;</cline>

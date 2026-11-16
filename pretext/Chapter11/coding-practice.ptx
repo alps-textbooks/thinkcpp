@@ -28,7 +28,7 @@ using namespace std;
 struct Cake {
     string name;
     double weight;
-    bool has_icing;
+    bool has_icing() { return weight > 10; }
 };
 
 int main() {
@@ -83,7 +83,7 @@ bool Cake::has_icing() {
 }
 
 int main() {
-     Cake c ("Choco lava", 3.5);
+     Cake c = {"Choco lava", 3.5};
 }
         ]]></code></program>
     </solution>
@@ -169,10 +169,10 @@ using namespace std;
 struct Music {
     int num_sold;
     int year;
-    bool latest(const &Music m_other) const;
+    bool latest(const Music &m_other) const;
 };
 
-bool Music:: latest(const &Music m_other) const {
+bool Music:: latest(const Music &m_other) const {
    if (year > m_other.year) {
      return true;
    }
@@ -210,7 +210,7 @@ struct Music {
 int main() {
     Music m1 = { "n/a", 2007, true };
     printInfo(m1);
-    Cake c2 = { "Drake", 2016, false };
+    Music m2 = { "Drake", 2016, false };
     printInfo(m2);
 }
         ]]></code>
@@ -252,7 +252,7 @@ int main() {
   </exercise>
   <exercise label="cp_11_AC_6">
     <statement>
-      <p>The <c>Music</c> structure has instance variables name, weight and member function has_icing.
+      <p>The <c>Cake</c> structure has instance variables name, weight and member function has_icing.
         Write the has_icing function which returns true when the weight is greater than 10.</p>
     <program interactive="activecode" line-numbers="yes" label="cp_11_AC_6q_editor">
       <code><![CDATA[
@@ -294,7 +294,7 @@ bool Cake::has_icing() {
 }
 
 int main() {
-     Cake c ("Choco lava", 3.5);
+     Cake c = {"Choco lava", 3.5};
 }
         ]]></code></program>
     </solution>
@@ -302,7 +302,7 @@ int main() {
   <exercise label="cp_11_AC_7">
     <statement>
       <p>Write the <c>Pants</c> structure, which has instance variables size and material. Also write a
-        constructor for <c>Pants</c> that would be called when p1 is declred. The constructor sets the
+        constructor for <c>Pants</c> that would be called when p1 is declared. The constructor sets the
         size to L and material to cotton.</p>
     <program interactive="activecode" line-numbers="yes" label="cp_11_AC_7q_editor">
       <code><![CDATA[
@@ -314,7 +314,6 @@ using namespace std;
 // Write your code for the constructor here
 
 int main() {
-    Pants p = { 'S', "denim" };
     Pants p1;
 }
         ]]></code>
@@ -338,7 +337,6 @@ Pants::Pants() {
 }
 
 int main() {
-    Pants p = { 'S', "denim" };
     Pants p1;
 }
         ]]></code></program>
@@ -381,7 +379,7 @@ using namespace std;
 
 struct Book {
     string name;
-    int year;
+    int publish_year;
     bool is_famous();
     Book();
     Book(string name_in, int publish_year_in);
@@ -491,7 +489,7 @@ struct Instrument {
 
 Instrument::Instrument() {
    name = "guitar";
-   publish_year = 2000;
+   year_made = 2000;
 }
 
 Instrument::Instrument(string name_in, int year_made_in) {

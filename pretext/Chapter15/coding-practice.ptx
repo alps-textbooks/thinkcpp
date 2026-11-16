@@ -458,7 +458,7 @@ int main() {
   Include proper file error checking.
         Check the hint below for help with the construction of the code.</p>
 
-    <program interactive="activecode" label="cp_15_AC_8q_editor">
+    <program interactive="activecode" label="cp_15_AC_8q_editor" add-files="shrimp-txt">
         <code>
 #include &lt;iostream&gt;
 #include &lt;fstream&gt;
@@ -476,7 +476,7 @@ using namespace std;
             Include proper file error checking.
             Use the lines to construct the code, then go back to complete the Activecode.</p>
 
-          <datafile label="shrimp.txt" filename="shrimp.txt">
+          <datafile label="shrimp-txt" xml:id="shrimp-txt" filename="shrimp.txt">
             <pre>There's pineapple shrimp, lemon shrimp, coconut shrimp,
 pepper shrimp, shrimp soup, shrimp stew, shrimp salad,
 shrimp and potatoes, shrimp burger, shrimp sandwich.
@@ -584,15 +584,15 @@ int main() {
         mat.push_back(rows);
     }
     for (int i = 0; i &lt; 10; ++i) {
-        for (int j = 0; i &lt; 10; ++j) {
-            matrix[i][j] = (i + 1) * (j + 1);
+        for (int j = 0; j &lt; 10; ++j) {
+            mat[i][j] = (i + 1) * (j + 1);
         }
     }
     for (int i = 0; i &lt; 10; ++i) {
-        for (int j = 0; i &lt; 10; ++j) {
-            outfile &lt;&lt; matrix[i][j] &lt;&lt; '\t';
+        for (int j = 0; j &lt; 10; ++j) {
+            outfile &lt;&lt; mat[i][j] &lt;&lt; '\t';
         }
-        cout &lt;&lt; endl;
+        outfile &lt;&lt; endl;
     }
 }
         </code>

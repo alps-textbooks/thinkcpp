@@ -32,7 +32,7 @@ int main() {
       </program></statement>
     <solution>
       <p>Below is one way to fix the program. Since we want <q>THE TEAM</q> to print three times, we
-        must check all three conditons. this means changing the else if statements to if statements.</p>
+        must check all three conditions. This means changing the else if statements to if statements.</p>
       <program interactive="activecode" line-numbers="yes" label="cond_rec_a1_a_editor-1">
           <code><![CDATA[
 #include <iostream>
@@ -48,7 +48,7 @@ int main() {
        cout << "THE TEAM" << endl;
    }
    if (y >= x) {
-       cout <<< "THE TEAM" << endl;
+       cout << "THE TEAM" << endl;
    }
 }
 ]]></code>
@@ -363,11 +363,16 @@ using namespace std;
 void goodVibes(string mood) {
 
 }
+
+int main() {
+    goodVibes("great");
+    goodVibes("bad");
+}
         ]]></code>
       </program></statement>
     <solution>
       <p>Below is one way to write the program. The return allows the function to exit if
-        there are bad vibes in the room. Otherise, the function prints as directed. </p>
+        there are bad vibes in the room. Otherwise, the function prints as directed. </p>
       <program xml:id="cond_rec_a7a_editor" line-numbers="yes"><code><![CDATA[
 #include <iostream>
 using namespace std;
@@ -376,7 +381,12 @@ void goodVibes(string mood) {
     if (mood == "bad") {
         return;
     }
-    cout << "I'm having a " << mood << " day";
+    cout << "I'm having a " << mood << " day!";
+}
+
+int main() {
+    goodVibes("great");
+    goodVibes("bad");
 }
         ]]></code></program>
     </solution>
@@ -432,7 +442,7 @@ void exclusiveOr(bool a, bool b) {
 
   <exercise label="cond_rec_a9">
     <statement>
-      <p>Write the function <c>countdown</c> that takes a positive integer and decrements it until eaching
+      <p>Write the function <c>countdown</c> that takes a positive integer and decrements it until reaching
         zero, printing the number at each step of the way. Once it reaches zero, it should print <q>
         Blastoff!</q></p>
     <program interactive="activecode" line-numbers="yes" label="cond_rec_a9q_editor">
@@ -442,6 +452,10 @@ using namespace std;
 
 void countdown(int num) {
 
+}
+
+int main() {
+    countdown(5);
 }
         ]]></code>
       </program></statement>
@@ -460,6 +474,10 @@ void countdown(int num) {
     else {
         cout << "Blastoff!";
     }
+}
+
+int main() {
+    countdown(5);
 }
         ]]></code></program>
     </solution>
