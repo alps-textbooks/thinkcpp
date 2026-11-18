@@ -25,6 +25,35 @@ struct Room {
     }
 };
         </code>
+      <tests><![CDATA[
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include "doctest.h"
+#include <type_traits>
+#include <utility>
+
+// Each check is true when code outside the class can use that member of Room.
+template <typename T, typename = void> struct LengthIsPublic : std::false_type {};
+template <typename T> struct LengthIsPublic<T, std::void_t<decltype(std::declval<T &>().length)>> : std::true_type {};
+template <typename T, typename = void> struct WidthIsPublic : std::false_type {};
+template <typename T> struct WidthIsPublic<T, std::void_t<decltype(std::declval<T &>().width)>> : std::true_type {};
+template <typename T, typename = void> struct HeightIsPublic : std::false_type {};
+template <typename T> struct HeightIsPublic<T, std::void_t<decltype(std::declval<T &>().height)>> : std::true_type {};
+template <typename T, typename = void> struct AreaIsPublic : std::false_type {};
+template <typename T> struct AreaIsPublic<T, std::void_t<decltype(std::declval<T &>().calculateArea())>> : std::true_type {};
+template <typename T, typename = void> struct VolumeIsPublic : std::false_type {};
+template <typename T> struct VolumeIsPublic<T, std::void_t<decltype(std::declval<T &>().calculateVolume())>> : std::true_type {};
+
+TEST_CASE("length, width and height are private") {
+    CHECK_FALSE(LengthIsPublic<Room>::value);
+    CHECK_FALSE(WidthIsPublic<Room>::value);
+    CHECK_FALSE(HeightIsPublic<Room>::value);
+}
+
+TEST_CASE("calculateArea and calculateVolume can still be called") {
+    CHECK(AreaIsPublic<Room>::value);
+    CHECK(VolumeIsPublic<Room>::value);
+}
+]]></tests>
     </program></statement>
     <solution><p>Below is the <c>class</c> definition of <c>Room</c>. As you can see, there isn’t a big
     difference between <c>struct</c>s and <c>class</c>es.</p>
@@ -215,6 +244,36 @@ public:
     }
 };
         </code>
+      <tests><![CDATA[
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include "doctest.h"
+
+TEST_CASE("getFahrenheit converts a temperature set in Celsius") {
+    Temp t;
+    t.setFahrenheit(0);
+    t.setCelsius(100);
+    CHECK(t.getFahrenheit() == doctest::Approx(212));
+    t.setCelsius(-40);
+    CHECK(t.getFahrenheit() == doctest::Approx(-40));
+}
+
+TEST_CASE("getCelsius converts a temperature set in Fahrenheit") {
+    Temp t;
+    t.setCelsius(0);
+    t.setFahrenheit(212);
+    CHECK(t.getCelsius() == doctest::Approx(100));
+    t.setFahrenheit(50);
+    CHECK(t.getCelsius() == doctest::Approx(10));
+}
+
+TEST_CASE("a temperature read in the scale it was set in is unchanged") {
+    Temp t;
+    t.setFahrenheit(98.6);
+    CHECK(t.getFahrenheit() == doctest::Approx(98.6));
+    t.setCelsius(37);
+    CHECK(t.getCelsius() == doctest::Approx(37));
+}
+]]></tests>
     </program></statement>
     <solution><p>Below is one way to implement this. We use the correct conversions in <c>cToF</c> and <c>fToC</c>
     and then call these functions in <c>getFahrenheit</c> and <c>getCelsius</c> if needed.</p>
@@ -359,6 +418,11 @@ int main() {
 using namespace std;
 
 // Write the class definition for MyVector here.
+
+int main() {
+    MyVector myVec;
+    cout &lt;&lt; "MyVector compiles." &lt;&lt; endl;
+}
         </code>
     </program></statement>
     <solution><p>Below is the <c>class</c> definition of <c>MyVector</c>. We use the <c>public</c> and <c>private</c> keywords

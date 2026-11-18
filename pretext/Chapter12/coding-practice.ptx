@@ -16,6 +16,20 @@ using namespace std;
 
 // Write your code for the struct Pixel here.
         ]]></code>
+      <tests><![CDATA[
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include "doctest.h"
+
+TEST_CASE("Pixel has the members r, g and b") {
+    Pixel p;
+    p.r = 255;
+    p.g = 0;
+    p.b = 128;
+    CHECK(p.r == 255);
+    CHECK(p.g == 0);
+    CHECK(p.b == 128);
+}
+]]></tests>
     </program></statement>
     <solution>
       <p>Below is one way to implement the program. We declare the Pixel struct and create
@@ -53,6 +67,11 @@ struct Pixel {
 };
 
 // Write your code for the struct Image here.
+
+int main() {
+    Image img;
+    cout &lt;&lt; "Image compiles." &lt;&lt; endl;
+}
         </code>
     </program></statement>
     <hint>

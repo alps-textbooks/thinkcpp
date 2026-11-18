@@ -11,6 +11,12 @@
 using namespace std;
 
 // Write your code for the enumerated type Planet.
+
+int main() {
+    Planet first = static_cast&lt;Planet&gt;(1);
+    (void)first;
+    cout &lt;&lt; "Planet compiles." &lt;&lt; endl;
+}
         </code>
     </program></statement>
     <solution><p>Below is one way to implement the program. The planets in our solar system
@@ -136,6 +142,14 @@ using namespace std;
 // Write your code for the struct Space here.
 
 // Write your code for the struct BingoBoard here.
+
+int main() {
+    Space space;
+    BingoBoard bingo;
+    (void)space;
+    (void)bingo;
+    cout &lt;&lt; "Space and BingoBoard compile." &lt;&lt; endl;
+}
         </code>
     </program></statement>
     <solution><p>Below is one way to implement the program. We declare the <c>Space</c> and <c>BingoBoard</c>
@@ -224,6 +238,29 @@ using namespace std;
 
 // Write your code for the swapValues function here.
         </code>
+      <tests><![CDATA[
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include "doctest.h"
+#include <vector>
+
+TEST_CASE("swapValues swaps the first and last values") {
+    std::vector<int> v = {1, 2, 3};
+    swapValues(v, 0, 2);
+    CHECK(v[0] == 3);
+    CHECK(v[1] == 2);
+    CHECK(v[2] == 1);
+}
+
+TEST_CASE("swapValues swaps two values in the middle") {
+    std::vector<int> v = {5, 8, 13, 21, 34};
+    swapValues(v, 3, 1);
+    CHECK(v[0] == 5);
+    CHECK(v[1] == 21);
+    CHECK(v[2] == 13);
+    CHECK(v[3] == 8);
+    CHECK(v[4] == 34);
+}
+]]></tests>
     </program></statement>
     <solution><p>Below is one way to implement the program. We store the value at <c>index1</c> in a <c>temp</c>
       variable, replace the value at <c>index1</c> with the value at <c>index2</c>, and then finally replace the
@@ -276,6 +313,36 @@ void swapValues(vector&lt;int&gt; &amp;vec, int index1, int index2) {
 
 // Write your code for the generateRandVec function here.
         </code>
+      <tests><![CDATA[
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include "doctest.h"
+#include <algorithm>
+#include <vector>
+
+TEST_CASE("generateRandVec returns each number from 1 to 75 once") {
+    std::vector<int> vec = generateRandVec();
+    CHECK(vec.size() == 75u);
+    std::sort(vec.begin(), vec.end());
+    bool oneTo75 = vec.size() == 75u;
+    for (size_t i = 0; i < vec.size(); ++i) {
+        if (vec[i] != (int)i + 1) {
+            oneTo75 = false;
+        }
+    }
+    CHECK(oneTo75);
+}
+
+TEST_CASE("generateRandVec shuffles the numbers") {
+    std::vector<int> vec = generateRandVec();
+    bool inOrder = true;
+    for (size_t i = 0; i < vec.size(); ++i) {
+        if (vec[i] != (int)i + 1) {
+            inOrder = false;
+        }
+    }
+    CHECK_FALSE(inOrder);
+}
+]]></tests>
     </program></statement>
     <hint>
       <activity label="cp_13_AC_6_pp">
@@ -347,6 +414,17 @@ void swapValues (vector&lt;int&gt; &amp;vec, int index1, int index2);
 vector&lt;int&gt; generateRandVec ();
 
 // Write your code for the makeBoard function here.
+
+int main() {
+    BingoBoard bingo;
+    bingo.makeBoard();
+    for (size_t row = 0; row &lt; bingo.board.size(); ++row) {
+        for (size_t col = 0; col &lt; bingo.board[row].size(); ++col) {
+            cout &lt;&lt; bingo.board[row][col].value &lt;&lt; "\t";
+        }
+        cout &lt;&lt; endl;
+    }
+}
         </code>
 <tests>
 int randomInt(int low, int high) {
