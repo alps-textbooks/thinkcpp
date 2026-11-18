@@ -60,7 +60,8 @@ int main() {
     <statement>
       <p>You are part of a class where everyone passes, but it's very hard
         to pass with an A. Fix the function so it prints your letter grade
-        according to this scheme. [0, 50) = C, [50, 95) = B, and [95, 100] = A.</p>
+        and also returns it as a <c>string</c>, according to this scheme.
+        [0, 50) = C, [50, 95) = B, and [95, 100] = A.</p>
     <program interactive="activecode" line-numbers="yes" label="cond_rec_a2_editor">
         <code><![CDATA[
 #include <iostream>
@@ -71,7 +72,7 @@ string whichDoor(double grade) {
   if (grade < 50) {
       s = "C";
   }
-  if (grade < 85) {
+  if (grade < 95) {
       s = "B";
   }
   if (grade >= 95) {
@@ -80,20 +81,67 @@ string whichDoor(double grade) {
   cout << s;
 }
       ]]></code>
+      <tests><![CDATA[
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include "doctest.h"
+#include <iostream>
+#include <sstream>
+#include <string>
+
+// Calls whichDoor(grade); keeps what it prints, without surrounding spaces or newlines, and what it returns.
+static void callWhichDoor(double grade, std::string &printed, std::string &returned) {
+    std::ostringstream out;
+    std::streambuf *before = std::cout.rdbuf(out.rdbuf());
+    returned = whichDoor(grade);
+    std::cout.rdbuf(before);
+    printed = out.str();
+    size_t first = printed.find_first_not_of(" \t\r\n");
+    size_t last = printed.find_last_not_of(" \t\r\n");
+    printed = first == std::string::npos ? "" : printed.substr(first, last - first + 1);
+}
+
+TEST_CASE("a grade below 50 is a C") {
+    std::string printed, returned;
+    for (double grade : {0.0, 12.5, 49.999}) {
+        callWhichDoor(grade, printed, returned);
+        CHECK(printed == "C");
+        CHECK(returned == "C");
+    }
+}
+
+TEST_CASE("a grade from 50 up to 95 is a B") {
+    std::string printed, returned;
+    for (double grade : {50.0, 70.0, 94.999}) {
+        callWhichDoor(grade, printed, returned);
+        CHECK(printed == "B");
+        CHECK(returned == "B");
+    }
+}
+
+TEST_CASE("a grade from 95 to 100 is an A") {
+    std::string printed, returned;
+    for (double grade : {95.0, 99.0, 100.0}) {
+        callWhichDoor(grade, printed, returned);
+        CHECK(printed == "A");
+        CHECK(returned == "A");
+    }
+}
+]]></tests>
       </program></statement>
     <hint>
       <p>You are part of a class where everyone passes, but it's very hard
         to pass with an A. Fix the function so it prints your letter grade
-        according to this scheme. [0, 50) = C, [50, 95) = B, and [95, 100] = A.
+        and also returns it as a <c>string</c>, according to this scheme.
+        [0, 50) = C, [50, 95) = B, and [95, 100] = A.
         Use the lines to construct the code, then go back to complete the Activecode.</p>
       <activity label="cond_rec_a2_pp" number="yes" adaptive="yes" indentation="hide" exercise-interactive="parson">
         <blocks>
           <block order="7">
             <choice correct="yes">
-              <cline>void whichDoor(double grade) {</cline>
+              <cline>string whichDoor(double grade) {</cline>
             </choice>
             <choice>
-              <cline>string whichDoor(double grade) { </cline>
+              <cline>void whichDoor(double grade) { </cline>
             </choice>
           </block>
           <block order="1">
@@ -128,6 +176,7 @@ string whichDoor(double grade) {
           </block>
           <block order="5">
             <cline>    cout &lt;&lt; s;</cline>
+            <cline>    return s;</cline>
             <cline>}</cline>
           </block>
         </blocks>
@@ -194,7 +243,7 @@ int main() {
 
   <exercise label="cond_rec_a4">
     <statement>
-      <p>Finish the <c>is_even</c>code below so that it prints true if <c>x</c> is even and false if <c>x</c>
+      <p>Finish the <c>is_even</c> code below so that it prints true if <c>x</c> is even and false if <c>x</c>
         is odd.</p>
     <program interactive="activecode" line-numbers="yes" label="cond_rec_a4_editor">
         <code><![CDATA[
@@ -203,7 +252,7 @@ using namespace std;
 
 void is_even(int num) {
   if (num % 2 == 0) {
-      cout << true;
+      cout << "true";
   }
 }
 
@@ -263,7 +312,7 @@ int main() {
 #include <iostream>
 using namespace std;
 
-bool guessTheWord(string correct) {
+void guessTheWord(string correct) {
     cout << "Guess the word!";
     string guess;
     cin >> guess;
@@ -271,7 +320,12 @@ bool guessTheWord(string correct) {
         cout << "That's it!";
     }
 }
+
+int main() {
+    guessTheWord("pumpkin");
+}
         ]]></code>
+      <stdin>apple pear pumpkin</stdin>
     </program></statement>
     <solution>
       <p>Below is one way to complete the program.</p>
@@ -279,7 +333,7 @@ bool guessTheWord(string correct) {
 #include <iostream>
 using namespace std;
 
-bool guessTheWord(string correct) {
+void guessTheWord(string correct) {
     cout << "Guess the word!";
     string guess;
     cin >> guess;
@@ -289,6 +343,10 @@ bool guessTheWord(string correct) {
     else {
         guessTheWord(correct);
     }
+}
+
+int main() {
+    guessTheWord("pumpkin");
 }
         ]]></code></program>
     </solution>
