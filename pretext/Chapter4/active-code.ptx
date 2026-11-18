@@ -544,7 +544,7 @@ int main() {
   <exercise label="cond_rec_a10">
     <statement>
       <p>Write the function <c>printNegativeNum</c> that asks the user for a negative number. If the user does not
-        provide a negative number, it should contine asking until the user provides one. It should
+        provide a negative number, it should continue asking until the user provides one. It should
         then print the negative number.</p>
     <program interactive="activecode" line-numbers="yes" label="cond_rec_a10_editor">
         <code><![CDATA[
@@ -558,7 +558,7 @@ void printNegativeNum() {
       </program></statement>
     <hint>
       <p>Write the function <c>printNegativeNum</c> that asks the user for a negative number. If the user does not
-        provide a negative number, it should contine asking until the user provides one. It should
+        provide a negative number, it should continue asking until the user provides one. It should
         then print the negative number. Use the lines to construct the code, then go back to
         complete the Activecode.</p>
       <activity label="cond_rec_a10_pp" number="yes" adaptive="yes" indentation="hide" exercise-interactive="parson">
@@ -588,7 +588,9 @@ void printNegativeNum() {
             </choice>
           </block>
           <block order="4">
-            <cline><![CDATA[    cout << negative << endl;]]></cline>
+            <cline>    else {</cline>
+            <cline><![CDATA[        cout << negative << endl;]]></cline>
+            <cline>    }</cline>
           </block>
           <block order="5">
             <cline>}</cline>
