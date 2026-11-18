@@ -385,7 +385,7 @@ void greaterThan(FIX ME) {
             <cline><![CDATA[        cout << "true";]]></cline>
             <cline>    }</cline>
           </block>
-          <block order="2">
+          <block order="2" correct="no">
             <cline>    if (a &lt; b) {</cline>
             <cline><![CDATA[        cout << true;]]></cline>
             <cline>    }</cline>
