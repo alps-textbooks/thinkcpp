@@ -82,7 +82,7 @@
       </block>
       <block order="2">
         <choice correct="yes">
-          <cline> newline();  //second call</cline>
+          <cline> newLine();  //second call</cline>
         </choice>
         <choice>
           <cline><![CDATA[ cout << newLine();  //second call ]]></cline>

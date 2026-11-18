@@ -137,7 +137,7 @@ int main() {
           </block>
           <block order="3">
             <cline>            if (j == word.length()) {</cline>
-            <cline>                count++</cline>
+            <cline>                count++;</cline>
             <cline>            }</cline>
           </block>
           <block order="5">

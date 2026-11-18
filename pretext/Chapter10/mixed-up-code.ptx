@@ -263,13 +263,13 @@
             adaptive="yes"
             indentation="show">
     <statement>
-      <p><![CDATA[Suppose <code>album</code> has already been defined as
-            ]]><c><![CDATA[vector<string> album = {"imagine", "needy", "NASA", "bloodline", "fake smile", "bad idea", "make up", "ghostin", "in my head", "7 rings", "thank u, next", "break up with your girlfriend, i'm bored"}]]></c> Construct a block of code that counts how many songs in
-        &lt;code&gt;album&lt;/code&gt; start with b.</p>
+      <p>Suppose <c>album</c> has already been defined as
+            <c><![CDATA[vector<string> album = {"imagine", "needy", "NASA", "bloodline", "fake smile", "bad idea", "make up", "ghostin", "in my head", "7 rings", "thank u, next", "break up with your girlfriend, i'm bored"}]]></c> Construct a block of code that counts how many songs in
+        <c>album</c> start with b.</p>
     </statement>
     <blocks>
       <block order="2">
-        <cline>count = 0</cline>
+        <cline>count = 0;</cline>
       </block>
       <block order="4">
         <cline><![CDATA[for (size_t i = 0; i < album.size(); i++) {]]></cline>
