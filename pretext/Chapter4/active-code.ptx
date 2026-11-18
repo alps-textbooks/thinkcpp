@@ -81,6 +81,52 @@ string whichDoor(double grade) {
   cout << s;
 }
       ]]></code>
+      <tests><![CDATA[
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include "doctest.h"
+#include <iostream>
+#include <sstream>
+#include <string>
+
+// Calls whichDoor(grade); keeps what it prints, without surrounding spaces or newlines, and what it returns.
+static void callWhichDoor(double grade, std::string &printed, std::string &returned) {
+    std::ostringstream out;
+    std::streambuf *before = std::cout.rdbuf(out.rdbuf());
+    returned = whichDoor(grade);
+    std::cout.rdbuf(before);
+    printed = out.str();
+    size_t first = printed.find_first_not_of(" \t\r\n");
+    size_t last = printed.find_last_not_of(" \t\r\n");
+    printed = first == std::string::npos ? "" : printed.substr(first, last - first + 1);
+}
+
+TEST_CASE("a grade below 50 is a C") {
+    std::string printed, returned;
+    for (double grade : {0.0, 12.5, 49.999}) {
+        callWhichDoor(grade, printed, returned);
+        CHECK(printed == "C");
+        CHECK(returned == "C");
+    }
+}
+
+TEST_CASE("a grade from 50 up to 95 is a B") {
+    std::string printed, returned;
+    for (double grade : {50.0, 70.0, 94.999}) {
+        callWhichDoor(grade, printed, returned);
+        CHECK(printed == "B");
+        CHECK(returned == "B");
+    }
+}
+
+TEST_CASE("a grade from 95 to 100 is an A") {
+    std::string printed, returned;
+    for (double grade : {95.0, 99.0, 100.0}) {
+        callWhichDoor(grade, printed, returned);
+        CHECK(printed == "A");
+        CHECK(returned == "A");
+    }
+}
+]]></tests>
       </program></statement>
     <hint>
       <p>You are part of a class where everyone passes, but it's very hard
