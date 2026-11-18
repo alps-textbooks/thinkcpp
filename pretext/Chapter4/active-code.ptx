@@ -243,7 +243,7 @@ int main() {
 
   <exercise label="cond_rec_a4">
     <statement>
-      <p>Finish the <c>is_even</c>code below so that it prints true if <c>x</c> is even and false if <c>x</c>
+      <p>Finish the <c>is_even</c> code below so that it prints true if <c>x</c> is even and false if <c>x</c>
         is odd.</p>
     <program interactive="activecode" line-numbers="yes" label="cond_rec_a4_editor">
         <code><![CDATA[
