@@ -281,11 +281,11 @@ int main() {
           <block order="7">
             <cline>  while (space &gt; 0) {</cline>
             <cline><![CDATA[   cout << " ";]]></cline>
-            <cline>   space --</cline>
+            <cline>   space--;</cline>
             <cline>  }</cline>
           </block>
           <block order="2">
-            <cline>  numprinted = 2 * count - 1;</cline>
+            <cline>  numPrinted = 2 * count - 1;</cline>
           </block>
           <block order="10">
             <cline>  while (numPrinted &gt; 0) {</cline>
